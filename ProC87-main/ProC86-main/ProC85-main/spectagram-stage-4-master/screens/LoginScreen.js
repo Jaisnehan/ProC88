@@ -1,0 +1,11 @@
+signIn=async(email,password)=>{
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email,password)
+    .then(()=>{
+      this.props.navigation.replace("Dashbroad");
+    })
+    .catch(error=>{
+        Alert.alert(error.message);
+    });
+};
